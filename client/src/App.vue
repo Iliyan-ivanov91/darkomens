@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <h1 class="text-3xl font-bold underline text-center">Crystal Surge</h1>
+  <router-view />
 </template>
 
 <style>

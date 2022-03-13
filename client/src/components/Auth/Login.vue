@@ -1,11 +1,14 @@
 <template>
-    <h1>Login to an Account</h1>
-    <input type="text" placeholder="Email" v-model="email">
-    <input type="password" placeholder="Password" v-model="password">
-    <p v-if="errMsg">{{ errMsg }}</p>
-    <button @click="register">Create Account</button>
-    <hr>
-    <button @click="signInWithGoogle">Sign in with Google</button>
+    <div class="flex flex-col items-center w-1/3 bg-gray-700 text-white rounded p-4 drop-shadow">
+        <h1 class="text-4xl mb-6 text-green-300">Login to an Account</h1>
+        <input class="mb-4 bg-gray-300 rounded px-4 py-1" type="text" placeholder="Email" v-model="email">
+        <input class="mb-4 bg-gray-300 rounded px-4 py-1" type="password" placeholder="Password" v-model="password">
+        <p v-if="errMsg">{{ errMsg }}</p>
+        <button class="bg-green-300 px-4 py-2 rounded text-gray-700 font-bold mb-4" @click="register">Login</button>
+        <hr>
+        <button class="bg-green-300 px-4 py-2 rounded text-gray-700 font-bold mb-4" @click="signInWithGoogle">Sign in with Google</button>
+        <p class="text-gray-400">Don't have an account? <button class="text-white" @click="$emit('switch')">Register</button></p>
+    </div>
 </template>
 
 <script setup>
@@ -42,7 +45,12 @@ const register = () => {
         }
     })
 };
+
+const emit = defineEmits(['switch'])
 const signInWithGoogle = () => {
 
 };
 </script>
+
+<style>
+</style>
